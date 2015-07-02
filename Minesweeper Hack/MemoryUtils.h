@@ -21,8 +21,8 @@ namespace Memory
 	template<class cClass>
 	static inline cClass Read(DWORD dwAddress, HANDLE hProcessHandle)
 	{
-		auto cData;
+		cClass cData;
 		ReadProcessMemory(hProcessHandle, (void**)dwAddress, &cData, sizeof(cClass), nullptr);
-		return cRead;
+		return cData;
 	}
 }

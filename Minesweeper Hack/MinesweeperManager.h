@@ -1,11 +1,21 @@
 #pragma once
 #include "pch.h"
+#include "ProcessManager.h"
 
-class MinesweeperManager
+#define MINE_TILE		0x8f
+#define HIDDEN_TILE		0x0f
+
+class CMinesweeperManager
 {
 public:
-	MinesweeperManager();
-	~MinesweeperManager();
+	CMinesweeperManager();
+	~CMinesweeperManager();
+
+	bool Initialize();
+	void Tick();
+	BYTE GetTileData(int x, int y);
+	void AdjustCoords(int x, int y, POINT &pt);
+	void ClickPoint(POINT pt, bool bRightClick);
 
 private:
 
@@ -20,8 +30,9 @@ private:
 	DWORD dwWidthAddress = 0x1005334;
 	DWORD dwHeightAddress = 0x1005338;
 
-	DWORD dwStartOffset;
+	DWORD dwStartOffset = 0x1005340;
 
 	POINT CursorPosOld;
+	CProcessManager* ProcessManager = nullptr;
 };
 

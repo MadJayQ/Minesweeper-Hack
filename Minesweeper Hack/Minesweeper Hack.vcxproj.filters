@@ -18,9 +18,6 @@
     <ClCompile Include="winmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MinesweeperManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

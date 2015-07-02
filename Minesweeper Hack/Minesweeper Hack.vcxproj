@@ -64,7 +64,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Console.cpp" />
     <ClCompile Include="MinesweeperManager.cpp" />
     <ClCompile Include="ProcessManager.cpp" />
     <ClCompile Include="winmain.cpp" />
