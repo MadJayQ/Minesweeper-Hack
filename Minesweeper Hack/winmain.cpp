@@ -6,7 +6,7 @@
 CMinesweeperManager* MinesweeperManager = nullptr;
 HANDLE hConsole;
 int saved_colors;
-bool debug = true;
+bool debug = false;
 
 
 int __cdecl _tmain(int arc, _TCHAR* argv[])
@@ -17,7 +17,9 @@ int __cdecl _tmain(int arc, _TCHAR* argv[])
 	MinesweeperManager = new CMinesweeperManager();
 	if (!MinesweeperManager->Initialize())
 	{
-		return 0;
+		Console::SetColor(RED);
+		printf("Could not find and hook into winmine.exe");
+		while (1);
 	}
 	for (;;)
 	{
